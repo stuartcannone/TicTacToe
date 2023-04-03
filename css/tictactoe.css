@@ -1,0 +1,27 @@
+body {
+    background-color: aquamarine;
+}
+table {
+    border-collapse: collapse;
+    width: 600px;
+    height: 600px;
+    margin: 0, auto;
+  }
+  
+  td {
+    width: 200px;
+    height: 200px;
+    font-size: 48px;
+    text-align: center;
+    vertical-align: middle;
+    border: 2px solid black;
+    cursor: pointer;
+  }
+  td.first {
+    content: "X";
+  }
+
+  td.second {
+    content: "O";
+  }
+  
