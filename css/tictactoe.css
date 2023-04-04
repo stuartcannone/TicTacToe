@@ -1,20 +1,49 @@
-body {
-    background-color: aquamarine;
+* {
+  box-sizing: border-box;
 }
+
+body {
+ background-image: url(../assets/beach\ background.jpg);
+ background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    
+}
+.container {
+  background-image: url(../assets/sand-texture-brown-sand-background-from-fine-sand-sand-background-min.jpg);
+  background-size: 100%;
+  max-width: 960px;
+  width: 700px;
+  margin: 0 auto;
+  padding: 1em;
+  border-bottom-left-radius: 1em;
+  border-bottom-right-radius: 1em;
+  
+}
+
 table {
     border-collapse: collapse;
+    display: block;
+    padding-left: 55px;
     width: 600px;
     height: 600px;
     margin: 0, auto;
+    font-family: 'Pacifico', cursive;
+    color: #c3a77a;
+    font-variant: small-caps;
+    text-shadow: 4px 1px 5px black;
+    
   }
   
   td {
     width: 200px;
     height: 200px;
-    font-size: 48px;
+    font-size: 60px;
     text-align: center;
     vertical-align: middle;
-    border: 2px solid black;
+    border: 5px inset #c3a77a;
     cursor: pointer;
   }
   td.first {

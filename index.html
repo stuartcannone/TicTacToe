@@ -4,13 +4,22 @@
     <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/tictactoe.css">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+      </style>
         <script src = 'js/jquery-3.6.4.js'></script>
     <script src = 'js/tictactoelogic.js'></script>
     <script src = 'js/tictactoedom.js'></script>
         <title>Tic Tac Toe</title>
 </head>
 <body>
-    <h1>Tic Tac Toe</h1>
+  <header>
+    <div class = "head">
+      <h1>Tic Tac Toe</h1>
+    </div>
+  </header>
+  <div class="container">
+ 
     <p>Take the Tic Tac Toe Challenge</p>
     <table id="board">
         <tr>
@@ -30,5 +39,6 @@
         </tr>
       </table>
       <button id="reset">Reset</button>
+</div> 
 </body>
 </html>
