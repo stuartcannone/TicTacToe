@@ -1,29 +1,34 @@
 console.log(jQuery.fn.jquery);
+
 // make board an empty 3x3 array to match table
 let board = [
-    ['', '', ''],
-    ['', '', ''],
-    ['', '', '']
-  ];
-  let currentPlayer = 'X';
-  
-  // create a function to take a row and column input for a move 
-  const play = function (row, col) {
-    if (board[row][col] === '') {
-      board[row][col] = currentPlayer;
-      if (checkWin(currentPlayer)) {
-        return currentPlayer + ' wins!';  // check if current move creates a win 
-      } else if (checkTie()) {
-        return 'Game over, tie!';  // check if the current move creates a tie 
-      } else {
-        currentPlayer = currentPlayer === 'X' ? 'O' : 'X'; // moves to next play 
-        return 'next move';
-      }
-    } else {
-      return 'too late you cannot mark here'; // make sure cell is not already filled 
-    }
+  ['', '', ''],
+  ['', '', ''],
+  ['', '', '']
+];
+let currentPlayer = 'X';
+let gameOver = false; // add gameOver flag
+
+const play = function (row, col) {
+  if (gameOver) {
+    return 'The game is over. Please reset to play again.';
   }
-  
+  if (board[row][col] === '') {
+    board[row][col] = currentPlayer;
+    if (checkWin(currentPlayer)) {
+      gameOver = true; // set gameWon flag to true
+      return currentPlayer + ' wins!';
+    } else if (checkTie()) {
+      gameOver = true; // set gameWon flag to true
+      return 'Game over, tie!';
+    } else {
+      currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+      return 'Next move: ' + currentPlayer;
+    }
+  } else {
+    return 'This cell is already occupied. Please select an empty cell.';
+  }
+}
 
   // create functions for 3 different win types 
 
@@ -62,6 +67,10 @@ let board = [
     }
     return true;
   }
+  // The above function iterates through each cell of the board array using nested for loops. 
+  //If it finds an empty cell, it immediately returns false, indicating that the game is not over yet.
+  //If all cells have been checked and no empty cells are found, the function returns true, indicating that the game has ended in a tie.
+ 
   // function to reset the board to play again or start over 
   const reset = function() {
     board = [
@@ -70,7 +79,9 @@ let board = [
       ['', '', '']
     ];
     currentPlayer = 'X';
+    gameOver = false;
   }
+  
   // console.log(play(0,0)); // x top left
   // console.log(checkWin);
   // console.log(checkTie);
@@ -83,3 +94,21 @@ let board = [
 
 
   // debugger
+
+
+// } else {
+//   currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+//   return 'Next move: ' + currentPlayer;
+//   Here's a breakdown of the syntax:
+
+// currentPlayer: This is the variable that is being assigned a new value.
+// currentPlayer === 'X': This is a comparison expression that checks if currentPlayer is equal to the string 'X'. If it is, the expression evaluates to true; otherwise, it evaluates to false.
+// ?: This is the ternary operator itself. It separates the comparison expression from the two possible values that currentPlayer could be assigned.
+// 'O': This is the value that currentPlayer will be assigned if the comparison expression is true.
+// :: This separates the value that currentPlayer will be assigned if the comparison expression is true from the value that it will be assigned if the comparison expression is false.
+// 'X': This is the value that currentPlayer will be assigned if the comparison expression is false.
+//if (currentPlayer === 'X') {
+//   currentPlayer = 'O';
+// } else {
+//   currentPlayer = 'X';
+// }
