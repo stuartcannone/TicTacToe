@@ -5,11 +5,10 @@ let board = [
     ['', '', ''],
     ['', '', '']
   ];
- 
+  let currentPlayer = 'X';
   
   // create a function to take a row and column input for a move 
   const play = function (row, col) {
-    let currentPlayer = 'X';
     if (board[row][col] === '') {
       board[row][col] = currentPlayer;
       if (checkWin(currentPlayer)) {
@@ -30,6 +29,7 @@ let board = [
 
   const checkWin = function(player) {
     // Check rows
+   
     for (let i = 0; i < 3; i++) {
       if (board[i][0] === player && board[i][1] === player && board[i][2] === player) {
         return true;
@@ -71,3 +71,15 @@ let board = [
     ];
     currentPlayer = 'X';
   }
+  // console.log(play(0,0)); // x top left
+  // console.log(checkWin);
+  // console.log(checkTie);
+  // console.log(play(1,0)); // o middle left
+  // console.log(play(0,1))// x top middle
+  // console.log(play(1,1)) // o middle middle
+  // console.log(play(0,2)) // x top right 
+  // console.log(checkWin) // x win true
+  // console.log(checkTie) // x win tie false
+
+
+  // debugger

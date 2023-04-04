@@ -1,22 +1,40 @@
 $(document).ready(function() {
     let currentPlayer = 'X';
-  
-    // add click event to each cell
+
     $('#board td').click(function() {
-      // check if cell is empty
-      if ($(this).text() === '') {
-        // mark cell with current player's symbol
-        $(this).text(currentPlayer);
-        if (checkWin(currentPlayer)) {
-          alert(currentPlayer + ' wins!');
-        } else if (checkTie()) {
-          alert('Game over, tie!');
+      const row = $(this).parent().index();
+      const col = $(this).index();
+      
+      const result = play(row, col);  // call play function 
+      
+      $(this).text(currentPlayer); // input of player marker 
+       
+      setTimeout(function() {
+        if (result === 'X wins!' || result === 'O wins!') {
+          alert(result);
+          // Add an if statement to check if the game is over from a win and stop play
+          if (result === 'X wins!' || result === 'O wins!') {
+        }
+        } else if (result === 'Game over, tie!') {
+          alert(result);
         } else {
-          // switch to next player
           currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
         }
-      }
+      }, 300); // how long it takes for the alert window to appear    
     });
+    
+    $('#reset').click(function() {
+      // Clear the board state
+      reset();
+      
+      // Clear the table cells
+      $('#board td').text('');
+      
+      // Set the current player to X
+      currentPlayer = 'X';
+    });
+  
   });
-  console.log(checkTie)
-  console.log(checkWin)
+
+
+ 
