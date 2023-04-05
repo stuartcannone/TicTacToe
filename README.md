@@ -1,38 +1,42 @@
-# TicTacToe
+# Beachy Tic Tac Toe
+Welcome to my version of Tic Tac Toe. I based it around the feeling of playing tic tac toe as a kid with friends on the beach drawing simple lines in the sand. This project will be updated with new features as my education in the space grows
 
-# HEADINGS
+## :computer: [Click here](https://stuartcannone.github.io/TicTacToe/) to see my live project!
 
-## SUBHEADING
+## :page_facing_up: About
+A simple beach themed Tic-Tac-Toe Game 
 
-Also Headings
-=============
-Subheadings
------------
 
-you can make something **bold** *italics* 
+## :pencil2: Planning & Problem Solving
+- Break down each element, determine each elements role and requirements
+- HTML - Backbone framework of document 
+    Key Elements 
+        Table to represent board
+       | 00 | 01 | 02 |
+        ------------
+       | 10 | 11 | 12 |
+        ------------
+       | 20 | 21 | 22 |
+        
+        Reset Button
+- CSS - styling elements 
+- Javascript - key game logic
+- Jquery - Make the javascript active in the DOM 
 
-## Lists
-* item 1
-* item 2 
-* item 3
+## :rocket: Cool tech
+- Javascript!
+- HTML!
+- CSS - including animations!
+- jQuery v 3.6.4!
 
-## Numbered Lists
-1. list 
-1. list 2
-2. list 3
+## :bug: Bugs to fix
+- Make the site more mobile friendly 
 
-## Links
 
-This is [a link to the w3c] (http://www.w3c.org/).
-
-## Images
-! [image name] (url for image)
-
-## Code formatting
-the jQuery library uses the `$` variable. have yout tried `console.log`
-
-```
-const thing = function (){
-    console.log(this is the function)
-}
-```
+## :white_check_mark: Future features
+- Score Counter
+- Multiplayer Integration
+- Artificial Intelligence Script To Play Against 
+- More animation on game wins and draw
+- Customisable Player Tokens 
+- Audio integration.
