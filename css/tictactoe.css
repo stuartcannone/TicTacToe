@@ -17,7 +17,7 @@ body {
 }
 .container {
   background-image: url(../assets/sand-texture-brown-sand-background-from-fine-sand-sand-background-min.jpg);
-  background-size: 100%;
+  background-size: contain;
   max-width: 960px;
   width: 700px;
   margin: 0 auto;
