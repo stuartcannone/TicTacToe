@@ -1,4 +1,4 @@
-console.log(jQuery.fn.jquery);
+console.log(jQuery.fn.jquery); // check links and javascript functionality 
 
 // make board an empty 3x3 array to match table
 let board = [
@@ -33,6 +33,7 @@ const play = function (row, col) {
   // create functions for 3 different win types 
 
   const checkWin = function(player) {
+    
     // Check rows
    
     for (let i = 0; i < 3; i++) {
@@ -67,6 +68,7 @@ const play = function (row, col) {
     }
     return true;
   }
+
   // The above function iterates through each cell of the board array using nested for loops. 
   //If it finds an empty cell, it immediately returns false, indicating that the game is not over yet.
   //If all cells have been checked and no empty cells are found, the function returns true, indicating that the game has ended in a tie.
@@ -82,33 +84,3 @@ const play = function (row, col) {
     gameOver = false;
   }
   
-  // console.log(play(0,0)); // x top left
-  // console.log(checkWin);
-  // console.log(checkTie);
-  // console.log(play(1,0)); // o middle left
-  // console.log(play(0,1))// x top middle
-  // console.log(play(1,1)) // o middle middle
-  // console.log(play(0,2)) // x top right 
-  // console.log(checkWin) // x win true
-  // console.log(checkTie) // x win tie false
-
-
-  // debugger
-
-
-// } else {
-//   currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
-//   return 'Next move: ' + currentPlayer;
-//   Here's a breakdown of the syntax:
-
-// currentPlayer: This is the variable that is being assigned a new value.
-// currentPlayer === 'X': This is a comparison expression that checks if currentPlayer is equal to the string 'X'. If it is, the expression evaluates to true; otherwise, it evaluates to false.
-// ?: This is the ternary operator itself. It separates the comparison expression from the two possible values that currentPlayer could be assigned.
-// 'O': This is the value that currentPlayer will be assigned if the comparison expression is true.
-// :: This separates the value that currentPlayer will be assigned if the comparison expression is true from the value that it will be assigned if the comparison expression is false.
-// 'X': This is the value that currentPlayer will be assigned if the comparison expression is false.
-//if (currentPlayer === 'X') {
-//   currentPlayer = 'O';
-// } else {
-//   currentPlayer = 'X';
-// }
